@@ -5,6 +5,9 @@
 // Redfining the entire horizonApp here because I can't find any other way of
 // loading the ui.bootstrap module I want to use.
 var horizon_dependencies = ['hz.conf', 'hz.utils', 'ngCookies', 'ui.bootstrap'];
+if (angularModuleExtension === undefined) {
+    var angularModuleExtension = [];
+}
 var dependencies = horizon_dependencies.concat(angularModuleExtension);
 var horizonApp = angular.module('hz', dependencies)
     .config(['$interpolateProvider', '$httpProvider',
